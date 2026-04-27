@@ -193,13 +193,6 @@ http.createServer((req, res) => {
     will-change: opacity, transform;
   }
 
-  /* ── "Next case study" button ────────────────────────────────────── */
-  #container .css-hf9sha[tabindex="0"] {
-    transition:
-      opacity  var(--fow-dur-slow) var(--fow-ease-out-expo),
-      transform var(--fow-dur-slow) var(--fow-ease-spring);
-    will-change: opacity, transform;
-  }
 
   /* ── Hero slide-in images (translateX animations) ───────────────── */
   #container .css-lbbuna,
@@ -226,7 +219,6 @@ http.createServer((req, res) => {
   /* ── Stagger: give each animated child a natural cascade delay ──── */
   #container header { transition-delay: 0s;    }
 
-  #container .css-hf9sha[tabindex="0"] { transition-delay: 0.1s; }
 
   #container .css-lbbuna,
   #container .css-pn5rr8         { transition-delay: 0.08s; }
@@ -245,11 +237,6 @@ http.createServer((req, res) => {
     min-width: 134px;
     white-space: nowrap;
   }
-  /* Also expand the clickable pill height/padding if needed */
-  #container .css-ty29eb,
-  #container .css-htom9d {
-    padding-right: 12px !important;
-  }
 
   /* ── Disable lazy mouse follow effect ───────────────────────────── */
   #sites-cursor-element {
@@ -261,6 +248,18 @@ http.createServer((req, res) => {
   #container .css-ezupt1 {
     height: 100% !important;
     min-height: 100vh !important;
+  }
+  /* ── Disable move-in for Next Study Area & Let's Talk ───────────── */
+  .fow-next-study-btn,
+  .css-hf9sha,
+  .css-zd8lv8,
+  .fow-next-study-btn .css-pn5rr8,
+  .fow-next-study-btn .css-5cl2xa,
+  .fow-next-study-btn [style*="translate"],
+  [style*="translateY(150px)"] {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 </style>`;
                 html = html.replace('</head>', ENTRANCE_SMOOTH_INJECTION + '</head>');
@@ -335,8 +334,8 @@ http.createServer((req, res) => {
 
   /* Shimmer fill on hover */
   @keyframes fow-shimmer {
-    0%   { background-position: -200% center; }
-    100% { background-position: 200% center; }
+    0%   { background-position: 200% center; }
+    100% { background-position: -200% center; }
   }
   .fow-next-study-btn:hover .fow-label-text {
     background: linear-gradient(90deg, #fff 20%, #c6cdde 40%, #fff 60%);
