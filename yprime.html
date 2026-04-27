@@ -3007,6 +3007,7 @@
       [data-framer-name="Hover Area"] [data-framer-name="Icon / ChevronRight"] svg {
         opacity: 1 !important;
         transform: none !important;
+        transform-origin: center center;
         transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
       
@@ -3017,7 +3018,7 @@
       [data-framer-name="Hover Area"]:hover [data-framer-name="Icon / ChevronRight"] img,
       [data-framer-name="Hover Area"]:hover [data-framer-name="Icon / ChevronRight"] svg {
         opacity: 1 !important;
-        transform: scale(1.06) !important;
+        transform: scale(1.06) rotate(45deg) !important;
       }
       
       [data-framer-name="Hover Area"] {
@@ -5088,6 +5089,53 @@
       (function () {
         const SCHEDULE_TEXT = "Schedule a Call";
         const SCHEDULE_LINK = "https://www.cal.eu/friendofweb/30min";
+        const CTA_PRELOAD_ASSETS = [
+          "/_assets/v11/481b59184c4e22ed577df53c729bf882f92c4853.svg",
+          "/_assets/v11/36b5a8e8933873f3367e29ef0bc3adc367680a12.svg",
+          "/_assets/v11/e611b7395bf94d2d6342283b371902f6deaf0a2b.svg",
+          "/_assets/v11/2f12d39046f997ebab8d20385daa717d70a00694.svg",
+          "/_assets/v11/7969668f69b7695744d1e87ee5273970e6a1d767.png",
+          "/_assets/v11/4feb82e6952b4b9d4284b32876076688b71d7e97.png",
+        ];
+
+        function preloadCtaAssets() {
+          CTA_PRELOAD_ASSETS.forEach((src) => {
+            const link = document.createElement("link");
+            link.rel = "preload";
+            link.as = "image";
+            link.href = src;
+            document.head.appendChild(link);
+
+            const img = new Image();
+            img.decoding = "async";
+            img.src = src;
+          });
+        }
+
+        function syncBreathingCanvasSize() {
+          const canvas = document.getElementById("breathing-canvas");
+          if (!canvas) return;
+
+          const pageHeight = Math.max(
+            document.documentElement.scrollHeight,
+            document.body ? document.body.scrollHeight : 0,
+            document.documentElement.clientHeight
+          );
+          const pageWidth = Math.max(
+            document.documentElement.clientWidth,
+            window.innerWidth || 0
+          );
+          const dpr = window.devicePixelRatio || 1;
+
+          canvas.style.width = "100%";
+          canvas.style.height = pageHeight + "px";
+
+          const nextWidth = Math.round(pageWidth * dpr);
+          const nextHeight = Math.round(pageHeight * dpr);
+
+          if (canvas.width !== nextWidth) canvas.width = nextWidth;
+          if (canvas.height !== nextHeight) canvas.height = nextHeight;
+        }
       
         function patchContactButtons() {
           document
@@ -5157,8 +5205,11 @@
         function runPatches() {
           patchContactButtons();
           enhanceNextStudyButtons();
+          syncBreathingCanvasSize();
         }
       
+        preloadCtaAssets();
+
         if (document.readyState === "loading") {
           document.addEventListener("DOMContentLoaded", runPatches, { once: true });
         } else {
@@ -5168,6 +5219,7 @@
         window.setTimeout(runPatches, 300);
         window.setTimeout(runPatches, 800);
         window.setTimeout(runPatches, 1500);
+        window.addEventListener("resize", syncBreathingCanvasSize);
       
         const observer = new MutationObserver(() => {
           window.requestAnimationFrame(runPatches);
