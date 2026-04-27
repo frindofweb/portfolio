@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100%" overflow="visible" preserveAspectRatio="none" style="display: block;" viewBox="0 0 40 40" width="100%">
+<g id="Frame Arrow">
+<rect fill="var(--fill-0, #03091A)" height="40" rx="20" width="40"/>
+<g id="Frame 69">
+<g clip-path="url(#clip0_0_398)" id="arrow">
+<path d="M15.9913 26.0145L24.5862 17.4196L24.5862 23.6575L26.2526 23.6575L26.2526 14.5747L17.1698 14.5747L17.1698 16.2411L23.4077 16.2411L14.8128 24.836L15.9913 26.0145Z" fill="var(--fill-0, #C6CDDE)" id="Vector"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_398">
+<rect fill="white" height="20" transform="translate(10.0001 9.99997)" width="20"/>
+</clipPath>
+</defs>
+</svg>
