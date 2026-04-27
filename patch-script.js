@@ -134,7 +134,7 @@
       if (node.nodeValue) {
         if (node.nodeValue.includes('Contact Me')) node.nodeValue = node.nodeValue.replace(/Contact Me/g, NEW_LABEL);
         if (node.nodeValue.includes('future-ready design systems at the Speed of AI')) {
-          node.nodeValue = node.nodeValue.replace('future-ready design systems at the Speed of AI. Working hands-on across research, design, and implementation.', 'future-ready systems, bridging research, design, and implementation for the AI era.');
+          node.nodeValue = node.nodeValue.replace('future-ready design systems at the Speed of AI. Working hands-on across research, design, and implementation.', 'future-ready systems, bridging research, design, and implementation for the AI era.222');
         }
       }
     }
