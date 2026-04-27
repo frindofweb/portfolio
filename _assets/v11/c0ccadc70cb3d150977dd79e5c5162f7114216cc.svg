@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100%" overflow="visible" preserveAspectRatio="none" style="display: block;" viewBox="0 0 66 66" width="100%">
+<g clip-path="url(#clip0_0_395)" id="Efficio Icon 1">
+<path d="M48 0H18C8.05887 0 0 8.05887 0 18V48C0 57.9411 8.05887 66 18 66H48C57.9411 66 66 57.9411 66 48V18C66 8.05887 57.9411 0 48 0Z" fill="url(#paint0_linear_0_395)" id="Vector"/>
+<path d="M48 0.5H18C8.33502 0.5 0.5 8.33502 0.5 18V48C0.5 57.665 8.33502 65.5 18 65.5H48C57.665 65.5 65.5 57.665 65.5 48V18C65.5 8.33502 57.665 0.5 48 0.5Z" id="Vector_2" stroke="url(#paint1_linear_0_395)" stroke-opacity="0.41"/>
+<g clip-path="url(#clip1_0_395)" id="yprime 1">
+<g id="Layer 3">
+<g id="Layer 2">
+<g id="Layer 3-2">
+</g>
+</g>
+</g>
+<path d="M36.7475 52.5531H32.7179C31.4789 52.5531 30.4761 51.5503 30.4761 50.3113V39.8203L38.9892 31.2673V50.3113C38.9892 51.5503 37.9864 52.5531 36.7475 52.5531Z" fill="var(--fill-0, white)" id="Vector_3"/>
+<path d="M46.5179 14.9067L49.3668 17.7556C50.2439 18.6327 50.2439 20.0525 49.3668 20.9265L38.9892 31.2643V19.2491L43.3469 14.9067C44.224 14.0296 45.6439 14.0296 46.5179 14.9067Z" fill="var(--fill-0, white)" id="Vector_4"/>
+<path d="M16.5719 17.7495L19.4208 14.9005C20.2979 14.0235 21.7177 14.0235 22.5917 14.9005L38.9892 31.2673H26.9709L16.5719 20.9204C15.6948 20.0433 15.6948 18.6235 16.5719 17.7495Z" fill="var(--fill-0, white)" id="Vector_5"/>
+</g>
+</g>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_395" x1="38" x2="29" y1="-14" y2="63.5">
+<stop stop-color="#1FA1F4"/>
+<stop offset="1" stop-color="#7C38AE"/>
+</linearGradient>
+<linearGradient gradientUnits="userSpaceOnUse" id="paint1_linear_0_395" x1="33.5" x2="33.5" y1="-9" y2="77">
+<stop stop-color="#22A7F9"/>
+<stop offset="1" stop-color="#7E40AB"/>
+</linearGradient>
+<clipPath id="clip0_0_395">
+<rect fill="white" height="66" width="66"/>
+</clipPath>
+<clipPath id="clip1_0_395">
+<rect fill="white" height="46" transform="translate(10 10)" width="46"/>
+</clipPath>
+</defs>
+</svg>
