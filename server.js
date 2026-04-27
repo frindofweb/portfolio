@@ -157,5 +157,5 @@ http.createServer((req, res) => {
     console.log('  ✓ Immutable cache headers for hashed assets');
     console.log('  ✓ Video Range request support (instant scrub)');
     console.log('  ✓ Auto-fetch & cache for missing assets');
-    console.log('  ✓ Static HTML overrides now live in portfolio-overrides.css/js');
+    console.log('  ✓ Page-specific patches are embedded directly in the HTML exports');
 });
