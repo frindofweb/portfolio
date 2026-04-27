@@ -1,0 +1,85 @@
+/* Shared overrides formerly injected by server.js at request time. */
+:root {
+  --fow-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --fow-ease-spring: cubic-bezier(0.34, 1.2, 0.64, 1);
+  --fow-dur-slow: 0.85s;
+  --fow-dur-mid: 0.65s;
+}
+
+#container header {
+  transition:
+    opacity var(--fow-dur-slow) var(--fow-ease-out-expo),
+    transform var(--fow-dur-slow) var(--fow-ease-out-expo);
+  will-change: opacity, transform;
+}
+
+#container main {
+  transition:
+    opacity var(--fow-dur-mid) var(--fow-ease-out-expo),
+    transform var(--fow-dur-mid) var(--fow-ease-out-expo);
+  will-change: opacity, transform;
+}
+
+#container .css-lbbuna,
+#container .css-1p9pc2,
+#container .css-pn5rr8,
+#container .css-5cl2xa,
+#container .css-lodtrb {
+  transition:
+    opacity var(--fow-dur-mid) var(--fow-ease-out-expo),
+    transform var(--fow-dur-mid) var(--fow-ease-out-expo);
+  will-change: opacity, transform;
+}
+
+#container .css-48no6p {
+  transition:
+    opacity var(--fow-dur-slow) var(--fow-ease-spring),
+    transform 1s var(--fow-ease-spring);
+  will-change: opacity, transform;
+}
+
+#container header {
+  transition-delay: 0s;
+}
+
+#container .css-lbbuna,
+#container .css-pn5rr8 {
+  transition-delay: 0.08s;
+}
+
+#container .css-1p9pc2,
+#container .css-5cl2xa {
+  transition-delay: 0.15s;
+}
+
+#container .css-48no6p {
+  transition-delay: 0.18s;
+}
+
+#container .css-i5i15q {
+  width: auto !important;
+  min-width: 134px;
+  white-space: nowrap;
+}
+
+#sites-cursor-element {
+  transition: none !important;
+}
+
+#container .css-ee2921,
+#container .css-ezupt1 {
+  height: 100% !important;
+  min-height: 100vh !important;
+}
+
+.fow-next-study-btn,
+.css-hf9sha,
+.css-zd8lv8,
+.fow-next-study-btn .css-pn5rr8,
+.fow-next-study-btn .css-5cl2xa,
+.fow-next-study-btn [style*="translate"],
+[style*="translateY(150px)"] {
+  transition: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
