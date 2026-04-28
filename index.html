@@ -2439,7 +2439,7 @@
       [data-framer-name="Hover Area"]:hover [data-framer-name="Icon / ChevronRight"] img,
       [data-framer-name="Hover Area"]:hover [data-framer-name="Icon / ChevronRight"] svg {
         opacity: 1 !important;
-        transform: scale(1.06) rotate(45deg) !important;
+        transform: scale(1.06) rotate(22.5deg) !important;
       }
       
       [data-framer-name="Hover Area"] {
@@ -4700,31 +4700,6 @@
           });
         }
 
-        function syncBreathingCanvasSize() {
-          const canvas = document.getElementById("breathing-canvas");
-          if (!canvas) return;
-
-          const pageHeight = Math.max(
-            document.documentElement.scrollHeight,
-            document.body ? document.body.scrollHeight : 0,
-            document.documentElement.clientHeight
-          );
-          const pageWidth = Math.max(
-            document.documentElement.clientWidth,
-            window.innerWidth || 0
-          );
-          const dpr = window.devicePixelRatio || 1;
-
-          canvas.style.width = "100%";
-          canvas.style.height = pageHeight + "px";
-
-          const nextWidth = Math.round(pageWidth * dpr);
-          const nextHeight = Math.round(pageHeight * dpr);
-
-          if (canvas.width !== nextWidth) canvas.width = nextWidth;
-          if (canvas.height !== nextHeight) canvas.height = nextHeight;
-        }
-      
         function patchContactButtons() {
           document
             .querySelectorAll('a[href*="mailto:"], a[href*="vlad@friendofweb"]')
@@ -4793,7 +4768,6 @@
         function runPatches() {
           patchContactButtons();
           enhanceNextStudyButtons();
-          syncBreathingCanvasSize();
         }
       
         preloadCtaAssets();
@@ -4807,7 +4781,6 @@
         window.setTimeout(runPatches, 300);
         window.setTimeout(runPatches, 800);
         window.setTimeout(runPatches, 1500);
-        window.addEventListener("resize", syncBreathingCanvasSize);
       
         const observer = new MutationObserver(() => {
           window.requestAnimationFrame(runPatches);
