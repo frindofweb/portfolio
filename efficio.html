@@ -4034,30 +4034,38 @@
           patchContactButtons();
           enhanceNextStudyButtons();
         }
+
+        function schedulePatchesAfterHydration() {
+          const runAfterPaint = () => {
+            window.requestAnimationFrame(() => {
+              window.requestAnimationFrame(runPatches);
+            });
+          };
+
+          runAfterPaint();
+          window.setTimeout(runPatches, 600);
+          window.setTimeout(runPatches, 1400);
+
+          const observer = new MutationObserver(() => {
+            window.requestAnimationFrame(runPatches);
+          });
+
+          const observeRoot = document.getElementById("container") || document.body;
+          if (observeRoot) {
+            observer.observe(observeRoot, {
+              childList: true,
+              subtree: true,
+              characterData: true,
+            });
+          }
+        }
       
         preloadCtaAssets();
 
-        if (document.readyState === "loading") {
-          document.addEventListener("DOMContentLoaded", runPatches, { once: true });
+        if (document.readyState === "complete") {
+          schedulePatchesAfterHydration();
         } else {
-          runPatches();
-        }
-      
-        window.setTimeout(runPatches, 300);
-        window.setTimeout(runPatches, 800);
-        window.setTimeout(runPatches, 1500);
-      
-        const observer = new MutationObserver(() => {
-          window.requestAnimationFrame(runPatches);
-        });
-      
-        const observeRoot = document.getElementById("container") || document.body;
-        if (observeRoot) {
-          observer.observe(observeRoot, {
-            childList: true,
-            subtree: true,
-            characterData: true,
-          });
+          window.addEventListener("load", schedulePatchesAfterHydration, { once: true });
         }
       })();
       
